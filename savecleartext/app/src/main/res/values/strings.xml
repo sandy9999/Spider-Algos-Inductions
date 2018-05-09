@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">savecleartext</string>
+    <string name="PREF_FILE">APP_PREF_FILE</string>
+    <string name="TEXT_INFO">APP_TEXT_INFO</string>
+</resources>

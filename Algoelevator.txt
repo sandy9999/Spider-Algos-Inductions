@@ -1,0 +1,39 @@
+//Since no constraints on input given, I have assumed random constraints
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+int arr[1001];
+
+int main() {
+	// your code goes here
+	int ini,i=0;
+	char temp;
+	cin>>ini;
+	do{
+        scanf("%d%c", &arr[i], &temp);
+        cout<<arr[i]<<endl;
+        i++; 
+        } while(temp!= '\n');
+    /*for(int j=0; j<i; j++)
+        arr[j] = 1;*/
+    sort(arr,arr+i);
+    int marker,dist = 0;
+    for(int j=0; j<i; j++)
+    {
+        if(arr[j]>=ini)
+        {
+            marker = j;
+            cout<<arr[j]<<' ';
+        }
+    }
+    for(int j=0; j<marker; j++)
+        cout<<arr[j]<<' ';
+    for(int j=marker; j<i-1; j++)
+        dist+=(arr[j+1] - arr[j]);
+    dist*=2;
+    for(int j=marker; j>0; j--)
+        dist+=(arr[j] - arr[j-1]);
+    cout<<"\nTotal Distance: "<<dist;
+	return 0;
+}
